@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pestañas</title>
+  <link rel="stylesheet" href="./style.css" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+  <section id="presentation" class="section color1">
+    <div class="sect1">
+      <h1 class="sect1_title">PRESENTACIÓN JUEGO</h1>
+      <button class="btn_sec-1" onclick="agregar_nuevaPalabra()">Agregar palabra nueva</button>
+      <button class="btn_sec-1" onclick="entrar_nuevoJuego()">Iniciar Juego</button>
+    </div>
+  </section>
+
+  <section id="new-word" class="section color2">
+    <div class="sect1">
+      <h1 class="sect1_title">NUEVA PALABRA</h1>
+      <button class="btn_sec-1" onclick="guardarEmpezar()">Guardar y empezar</button>
+      <button class="btn_sec-1" onclick="cancelar_nuevaPalabra()">Cancelar</button>
+    </div>
+  </section>
+
+  <section id="new-game" class="section color3">
+    <div class="sect2">
+      <h1 class="sect2_title">NUEVO JUEGO</h1>
+      <button class="btn_sec-2" onclick="">Nuevo Juego</button>
+      <button class="btn_sec-2" onclick="salir_nuevoJuego()">Cancelar</button>
+    </div>
+  </section>
+
+  
+
+  <script src="./script.js"></script>
+</body>
+
+</html>
