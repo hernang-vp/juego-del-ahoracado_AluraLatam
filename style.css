@@ -1,8 +1,8 @@
 :root {
-    --lightgrey: #f3f5fc;
-    --middlegrey: #D8DFE8;
+    --lightblue: #add8e6;
+    --lightskyblue: #87cefa;
+    --blue: #0073ff;
     --darkblue: #0A3871;
-    --grey: #495057;
 }
 
 * {
@@ -12,97 +12,133 @@
 }
 
 html {
-    font-size: 10.68px;
+    font-size: 62.5%;
     font-family: 'Permanent Marker', cursive;
+    user-select: none;
 }
 
-.section {
+.screen {
     width: 100%;
     height: 100vh;
     display: flex;
 }
 
+.btn_ {
+    width: 25rem;
+    height: 5rem;
+    margin: 2rem 1rem 0;
+    display: inline-block;
+    color: var(--blue);
+    background-image: linear-gradient(to right, var(--lightskyblue), var(--lightblue));
+    border: none;
+    box-shadow: 0 3px 10px;
+    font-size: 1.8rem;
+    font-family: 'Inter', sans-serif;
+    /* font-weight: bold; */
+    text-decoration: none;
+    border-radius: 2.5rem;
+    cursor: pointer;
+}
+
+
 .color1 {
-    background-color: cornflowerblue;
+    background-color: lightblue
 }
+
 .color2 {
-    background-color: blueviolet;
+    background-color: lightseagreen
 }
+
 .color3 {
     background-color: brown;
 }
 
-/* PRESENTACIÓN */
-.sect1 {
-    margin: auto;
-    width: 300px;
-    height: 150px;
-    border: 1px solid;
-    text-align: center;
-}
-
-.sect1_title {
-    margin: 20px auto;
-}
-
-.btn_sec-1 {
+.presentation {
     display: inline-block;
-    background-color: white;
-    color: darkorange;
-    border: 1px solid;
-    font-size: 1.6rem;
-    text-decoration: none;
-    padding: 1.2rem 4rem;
-    border-radius: 1.5rem;
-}
-
-/* ////////////////////////////////////// */
-
-
-.sect2 {
-    margin: auto;
-    width: 300px;
-    height: 150px;
-    border: 1px solid;
+    width: 100%;
+    height: 100vh;
     text-align: center;
+    background-image: url(./assets/waves.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
-.sect2_title {
-    margin: 20px auto;
+.presentation_title {
+    margin: 15rem 0 4rem;
+    font-size: 3rem;
+    color: white;
+    text-shadow: 0 3px 10px;
 }
 
-.btn_sec-2 {
-    display: inline-block;
-    background-color: white;
-    color: darkorange;
+/* AGREGAR NUEVA PALABRA */
+.new-word {
+    height: 120px;
+}
+
+.new-word__input {
+    display: inherit;
+    width: 80%;
+    max-width: 525px;
+    height: 5.5rem;
+    margin: 4rem auto 1.5rem;
+    text-align: center;
+    background-color: lightseagreen;
+    font-family: 'Permanent Marker', cursive;
+    font-size: 3rem;
+    color: white;
     border: 1px solid;
-    font-size: 1.6rem;
-    text-decoration: none;
-    padding: 1.2rem 4rem;
-    border-radius: 1.5rem;
+    border-radius: 2.5rem;
 }
 
-/* ////////////////////////////////////// */
+.warning {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.6rem;
+    /* font-weight: bold; */
+    color: var(--darkblue);
+}
 
 
+/* JUEGO NUEVO */
 
+.new-game_title {
+    margin-top: 5rem;
+    font-size: 3rem;
+    color: white;
+    text-shadow: 0 3px 10px;
+}
 
+.img {
+    width: 90%;
+    height: 55%;
+    background-image: url(./assets/Muñeco.png);
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.new-game__buttons {
+    position: relative;
+    bottom: 1rem;
+}
 
 
 
 
 
 /* INICIO FOOTER */
-footer p {
-    background-color: red;
-    width: 135px;
-    height: 18px;
-    /* margin-top: 20px; */
-    text-align: center;
-    padding-top: 2px;
+footer {
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    background-color: rgba(255,255,255,0.5);
+    opacity: 1;
 
-    transform: rotate(-90deg);
+    width: 100%;
+    height: 20px;
+    text-align: right;
+    padding: 4px 10px 0;
+
     position: fixed;
-    bottom: 58px;
-    left: -59px;
+    /* transform: rotate(-90deg); */
+    bottom: 0; /* 58 */
+    left: 0; /* -59 */
 }
