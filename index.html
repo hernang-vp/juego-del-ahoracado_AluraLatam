@@ -42,12 +42,24 @@
     <div class="presentation">
       <h1 class="new-game_title">NUEVO JUEGO</h1>
       <img class="img" src="">
-      <div class="new-game__buttons">
-        <button class="btn_" onclick="">Nuevo Juego</button>
-        <button class="btn_" onclick="salir_nuevoJuego()">Cancelar</button>
 
-        <!-- botón de prueba -->
-        <button class="btn_" onclick="prueba()">/botón de prueba/</button>
+      <div class="right-letters">
+        <p id="hidden-word"></p>
+        <span class="right-letters__spaces">A</span>
+        <span class="right-letters__spaces"> </span>
+        <span class="right-letters__spaces">U</span>
+        <span class="right-letters__spaces">R</span>
+        <span class="right-letters__spaces">A</span>
+      </div>
+
+      <div class="wrong-letters">
+        <span class="wrong-letters__spaces">S</span>
+        <span class="wrong-letters__spaces">D</span>
+        <span class="wrong-letters__spaces">C</span>
+      </div>
+      <div class="new-game__buttons">
+        <button class="btn_" onclick="palabraNueva()">Nuevo Juego</button>
+        <button class="btn_" onclick="salir_nuevoJuego()">Cancelar</button>
       </div>
     </div>
   </section>
