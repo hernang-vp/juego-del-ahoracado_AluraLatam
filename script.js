@@ -1,7 +1,7 @@
 /* APARECE SOLAMENTE LA PANTALLA DE PRESENTACIÓN DEL JUEGO */
-const presentacion = document.getElementById("openGame").style.display = "none";
+const presentacion = document.getElementById("openGame").style.display = "flex";
 const nuevaPalabra = document.getElementById("new-word").style.display = "none";
-const nuevoJuego = document.getElementById("new-game").style.display = "flex";
+const nuevoJuego = document.getElementById("new-game").style.display = "none";
 
 const input = document.querySelector(".new-word__input");
 const advertencia = document.querySelector(".warning");
@@ -28,6 +28,7 @@ function entrar_nuevoJuego() {
 function agregar_nuevaPalabra() {
     document.getElementById("openGame").style.display = "none";
     document.getElementById("new-word").style.display = "flex";
+    document.querySelector(".new-word__input").focus()
 }
 
 /* PANTALLA AGREGAR PALABRA NUEVA */
@@ -38,12 +39,14 @@ function clearInputText() {
 function guardarEmpezar() {
     if (input.value == "") {
         advertencia.innerText = "⚠ Ingrese una palabra o presione Cancelar"
+        document.querySelector(".new-word__input").focus()
     } else {
         document.getElementById("new-word").style.display = "none";
         document.getElementById("new-game").style.display = "flex";
         arrayPalabras.push(input.value);
         clearInputText();
         advertencia.innerText = "";
+        palabraNueva()
         console.log(arrayPalabras); /* borrar console.log */
     }
 }
