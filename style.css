@@ -115,16 +115,19 @@ html {
     background-repeat: no-repeat;
 }
 
-.new-game__buttons {
+.new-game__button {
     position: absolute;
     width: 100%;
     bottom: 7rem;
 }
 
 .hidden-word {
+    width: 80%;
     font-size: 4rem;
+    padding-left: 2.5rem;
+    letter-spacing: 2rem;
     color: white;
-    margin: 2.5rem 0;
+    margin: 2.5rem auto;
 }
 
 /* .right-letters__spaces {
