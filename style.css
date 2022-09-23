@@ -121,7 +121,13 @@ html {
     bottom: 7rem;
 }
 
-.right-letters__spaces {
+.hidden-word {
+    font-size: 4rem;
+    color: white;
+    margin: 2.5rem 0;
+}
+
+/* .right-letters__spaces {
     display: inline-block;
     vertical-align: bottom;
     width: 50px;
@@ -129,8 +135,8 @@ html {
     color: white;
     margin: 1.5rem .2rem;
     border-bottom: 5px solid red;
-    /* text-shadow: 0 3px 10px white; */
-}
+    text-shadow: 0 3px 10px white;
+} */
 
 .wrong-letters__spaces {
     display: inline-block;

@@ -10,25 +10,37 @@ const arrayPalabras = ["alura", "oracle", "html", "css", "challenge", "one", "ja
 
 /////////////////////////////
 function palabraNueva() {
-const palabraAleatoria = arrayPalabras[Math.floor(Math.random() * arrayPalabras.length)]
+const palabraAleatoria = arrayPalabras[Math.floor(Math.random() * arrayPalabras.length)].toUpperCase();
 console.log(palabraAleatoria)
 let palabraGuiones = palabraAleatoria.replace(/./g,"_ ")
 console.log(palabraGuiones)
-let hiddenWord = document.querySelector("#hidden-word")
+let hiddenWord = document.querySelector(".hidden-word")
 hiddenWord.innerText = palabraGuiones;
 }
 //////////////////////////////
+
+
+
 
 function entrar_nuevoJuego() {
     document.getElementById("openGame").style.display = "none";
     document.getElementById("new-game").style.display = "flex";
     palabraNueva()
+    document.addEventListener("keydown", letterEvent);
+}
+
+//evento para capturar las letras del teclado
+const letterEvent = event => {
+    let newLetter = event.key.toLocaleUpperCase();
+    if(newLetter.match(/^[a-zñ]$/i)) {
+        console.log("letra" + newLetter);
+    }
 }
 
 function agregar_nuevaPalabra() {
     document.getElementById("openGame").style.display = "none";
     document.getElementById("new-word").style.display = "flex";
-    document.querySelector(".new-word__input").focus()
+    document.querySelector(".new-word__input").focus();
 }
 
 /* PANTALLA AGREGAR PALABRA NUEVA */
@@ -63,5 +75,3 @@ function salir_nuevoJuego() {
     document.getElementById("new-game").style.display = "none";
     document.getElementById("openGame").style.display = "flex";
 }
-
-
