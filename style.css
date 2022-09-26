@@ -1,172 +1,44 @@
-:root {
-    --lightblue: #add8e6;
-    --lightskyblue: #87cefa;
-    --blue: #0073ff;
-    --darkblue: #0A3871;
-}
-
 * {
-    box-sizing: border-box;
     margin: 0;
     padding: 0;
-}
+    box-sizing: border-box;
 
-html {
-    font-size: 62.5%;
-    font-family: 'Permanent Marker', cursive;
-    user-select: none;
-}
-
-.screen {
-    width: 100%;
-    height: 100vh;
-    display: flex;
-}
-
-.btn_ {
-    width: 25rem;
-    height: 5rem;
-    margin: 2rem 1rem 0;
-    display: inline-block;
-    color: var(--blue);
-    background-image: linear-gradient(to right, var(--lightskyblue), var(--lightblue));
-    border: none;
-    box-shadow: 0 3px 10px;
-    font-size: 1.8rem;
-    font-family: 'Inter', sans-serif;
-    /* font-weight: bold; */
-    border-radius: 2.5rem;
-    cursor: pointer;
-}
-
-
-.color1 {
-    background-color: lightblue
-}
-
-.color2 {
-    background-color: lightseagreen
-}
-
-.color3 {
     background-color: brown;
+    color: white;
 }
 
-.presentation {
-    display: inline-block;
+body {
+    margin: 20px;
+}
+
+#ahorcado {
+    width: 190px;
+    height: 220px;
+    background-image: url("assets/hangman-game_pm-1024x212.png")
+}
+
+#ganador {
+    display: none;
     width: 100%;
     height: 100vh;
-    text-align: center;
-    background-image: url(./assets/waves.png);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
-.presentation_title {
-    margin: 15rem 0 4rem;
-    font-size: 3rem;
-    color: white;
-    text-shadow: 0 3px 10px;
-}
-
-/* AGREGAR NUEVA PALABRA */
-.new-word {
-    height: 120px;
-}
-
-.new-word__input {
-    display: inherit;
-    width: 80%;
-    max-width: 525px;
-    height: 5.5rem;
-    margin: 4rem auto 1.5rem;
-    text-align: center;
-    background-color: lightseagreen;
-    font-family: 'Permanent Marker', cursive;
-    font-size: 3rem;
-    color: white;
-    border: 1px solid;
-    border-radius: 2.5rem;
-}
-
-.warning {
-    font-family: 'Inter', sans-serif;
-    font-size: 1.6rem;
-    /* font-weight: bold; */
-    color: var(--darkblue);
-}
-
-
-/* JUEGO NUEVO */
-
-.new-game_title {
-    margin-top: 3rem;
-    font-size: 4rem;
-    color: white;
-    text-shadow: 0 3px 10px;
-}
-
-.img {
-    width: 90%;
-    height: 35%;
-    background-image: url(./assets/Muñeco.png);
-    background-position: center;
-    background-repeat: no-repeat;
-}
-
-.new-game__button {
-    position: absolute;
-    width: 100%;
-    bottom: 7rem;
-}
-
-.hidden-word {
-    width: 80%;
-    font-size: 4rem;
-    padding-left: 2.5rem;
-    letter-spacing: 2rem;
-    color: white;
-    margin: 2.5rem auto;
-}
-
-/* .right-letters__spaces {
-    display: inline-block;
-    vertical-align: bottom;
-    width: 50px;
-    font-size: 4rem;
-    color: white;
-    margin: 1.5rem .2rem;
-    border-bottom: 5px solid red;
-    text-shadow: 0 3px 10px white;
-} */
-
-.wrong-letters__spaces {
-    display: inline-block;
-    width: 30px;
-    font-size: 3rem;
-    color: pink;
-    text-shadow: 0 0 5px red;
-    margin-bottom: 2rem;
-}
-
-
-
-
-/* INICIO FOOTER */
-footer {
-    font-family: 'Inter', sans-serif;
-    font-size: 1rem;
-    background-color: rgba(255,255,255,0.5);
-    opacity: 1;
-
-    width: 100%;
-    height: 20px;
-    text-align: right;
-    padding: 4px 10px 0;
-
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    font-size: 5rem;
     position: fixed;
-    /* transform: rotate(-90deg); */
-    bottom: 0; /* 58 */
-    left: 0; /* -59 */
+    top: 0;
+    left: 0;
+    background-color: white;
+}
+
+.ingresarLetra {
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: transparent;
+    color: transparent;
+    border: 15px solid black;
+    cursor: default;
 }
