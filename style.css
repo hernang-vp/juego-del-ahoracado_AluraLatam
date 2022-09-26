@@ -67,7 +67,7 @@ html {
 
 .ingresarLetra {
     width: 100%;
-    height: fit-content;
+    height: 100vh;
     position: absolute;
     top: 0;
     left: 0;
