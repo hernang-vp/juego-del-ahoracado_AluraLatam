@@ -15,21 +15,63 @@
 </head>
 
 <body>
-    <h1>juego</h1>
-    <p>introduzca una letra</p>
+    <!-- SECCIÓN PRESENTACIÓN -->
+    <section id="openGame" class="screen color1">
+        <div class="presentation">
+            <h1 class="presentation_title">Juego del Ahorcado</h1>
+            <button class="btn_" onclick="entrar_nuevoJuego()">Iniciar Juego</button>
+            <button class="btn_" onclick="agregar_nuevaPalabra()">Agregar palabra nueva</button>
+        </div>
+    </section>
 
-    <input type="text" maxlength="1" class="ingresarLetra">
+    <!-- SECCIÓN PALABRA NUEVA -->
+    <section id="new-word" class="screen color2">
+        <div class="presentation">
+            <h1 class="presentation_title">Ingrese una nueva palabra</h1>
+            <form class="new-word">
+                <input class="new-word__input" type="text" placeholder="Ingrese una palabra">
+                <p class="warning"></p>
+            </form>
+            <button class="btn_" onclick="guardarEmpezar()">Guardar y empezar</button>
+            <button class="btn_" onclick="cancelar_nuevaPalabra()">Cancelar</button>
+        </div>
+    </section>
 
-    <p class="output" style="text-transform:uppercase;"></p> <!-- palabra con guiones y mostrada -->
+    <!-- SECCIÓN JUEGO NUEVO -->
+    <section id="new-game" class="screen color3">
+        <div class="presentation">
+            <h1 class="new-game_title">NUEVO JUEGO</h1>
+            <input type="text" maxlength="1" class="ingresarLetra">
 
-    <div id="ahorcado"></div>
+            <div id="ahorcado"></div> <!-- dibujo ahorcado -->
+            <p class="output" style="text-transform:uppercase;"></p> <!-- palabra con guiones y mostrada -->
 
-    <div id="ganador">
-        <p>Victoria</p>
-        <p>buenísimo</p>
-    </div>
+            <div class="new-game__buttons">
+                <button class="btn_" onclick="palabraNueva()">Nuevo Juego</button>
+                <button class="btn_" onclick="salir_nuevoJuego()">Cancelar</button>
+            </div>
 
-    <script src="./js.js"></script>
+            <div id="won-game">
+                <!-- pop-up juego ganado -->
+                <div class="won-game__container">
+                    <p>¡Ganaste!</p>
+                    <p>¡Felicidades!</p>
+                    <p class="won-game__phrase">La palabra era</p>
+                    <p class="won-game__word">cosito</p>
+                    <div class="new-game__buttons">
+                        <button class="btn_" onclick="palabraNueva()">Nuevo Juego</button>
+                        <button class="btn_" onclick="salir_nuevoJuego()">Volver al inicio</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>diseñado por hernang.vp</p>
+    </footer>
+
+    <script src="./script.js"></script>
 </body>
 
 </html>

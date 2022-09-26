@@ -1,44 +1,196 @@
+:root {
+    --lightblue: #add8e6;
+    --lightskyblue: #87cefa;
+    --blue: #0073ff;
+    --darkblue: #0A3871;
+}
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-
-    background-color: brown;
-    color: white;
 }
 
-body {
-    margin: 20px;
+html {
+    font-size: 62.5%;
+    font-family: 'Permanent Marker', cursive;
+    user-select: none;
 }
+
+/* //////////////////// */
 
 #ahorcado {
     width: 190px;
     height: 220px;
-    background-image: url("assets/hangman-game_pm-1024x212.png")
+    background-image: url("assets/hangman-game_pm-1024x212.png");
+    margin: 0 auto;
 }
 
-#ganador {
+#won-game {
     display: none;
-    width: 100%;
-    height: 100vh;
+    position: fixed;
+    margin: auto;
+    width: 84%;
+    height: 84vh;
     align-items: center;
     justify-content: center;
-    flex-direction: column;
+    top: 8%;
+    left: 8%;
+    font-size: 6rem;
+    color: white;
+    text-shadow: 0 3px 5px;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 5rem;
+    backdrop-filter: blur(0.5rem) ;
+    box-shadow: 0 0 5rem white;
+    z-index: 10;
+}
+
+.won-game__phrase {
+    font-size: 3rem;
+    color: var(--darkblue);
+    margin-top: 5rem;
+}
+
+.won-game__word {
     font-size: 5rem;
-    position: fixed;
-    top: 0;
-    left: 0;
-    background-color: white;
+    color: var(--darkblue);
+    margin-top: 1rem;
 }
 
 .ingresarLetra {
     width: 100%;
     height: 100vh;
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
     background: transparent;
     color: transparent;
-    border: 15px solid black;
     cursor: default;
+    z-index: 1;
+}
+
+.output {
+    width: 80%;
+    font-size: 4rem;
+    color: white;
+    margin: 2.5rem auto;
+}
+
+/* //////////////////// */
+
+.screen {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+}
+
+.btn_ {
+    width: 25rem;
+    height: 5rem;
+    margin: 2rem 1rem 0;
+    display: inline-block;
+    color: var(--blue);
+    background-image: linear-gradient(to right, var(--lightskyblue), var(--lightblue));
+    border: none;
+    box-shadow: 0 3px 10px;
+    font-size: 1.8rem;
+    font-family: 'Inter', sans-serif;
+    /* font-weight: bold; */
+    border-radius: 2.5rem;
+    cursor: pointer;
+}
+
+.color1 {
+    background-color: lightblue
+}
+
+.color2 {
+    background-color: lightseagreen
+}
+
+.color3 {
+    background-color: brown;
+}
+
+.presentation {
+    display: inline-block;
+    width: 100%;
+    height: 100vh;
+    text-align: center;
+    background-image: url(./assets/waves.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.presentation_title {
+    margin: 15rem 0 4rem;
+    font-size: 3rem;
+    color: white;
+    text-shadow: 0 3px 10px;
+}
+
+/* AGREGAR NUEVA PALABRA */
+.new-word {
+    height: 120px;
+}
+
+.new-word__input {
+    display: inherit;
+    width: 80%;
+    max-width: 525px;
+    height: 5.5rem;
+    margin: 4rem auto 1.5rem;
+    text-align: center;
+    background-color: lightseagreen;
+    font-family: 'Permanent Marker', cursive;
+    font-size: 3rem;
+    color: white;
+    border: 1px solid;
+    border-radius: 2.5rem;
+}
+
+.warning {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.6rem;
+    /* font-weight: bold; */
+    color: var(--darkblue);
+}
+
+/* JUEGO NUEVO */
+
+.new-game_title {
+    margin: 7rem 0;
+    font-size: 4rem;
+    color: white;
+    text-shadow: 0 3px 10px;
+}
+
+.new-game__buttons {
+    display: inline;
+    position: relative;
+    width: 62%;
+    margin: 3.5rem auto;
+    z-index: 5;
+}
+
+/* INICIO FOOTER */
+footer {
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    background-color: rgba(255, 255, 255, 0.5);
+    opacity: 1;
+
+    width: 100%;
+    height: 20px;
+    text-align: right;
+    padding: 4px 10px 0;
+
+    position: fixed;
+    /* transform: rotate(-90deg); */
+    bottom: 0;
+    /* 58 */
+    left: 0;
+    /* -59 */
 }
