@@ -20,10 +20,12 @@ html {
 /* //////////////////// */
 
 #ahorcado {
-    width: 190px;
-    height: 220px;
-    background-image: url("assets/hangman-game_pm-1024x212.png");
+    width: 240px;
+    height: 320px;
+    background-image: url(assets/fotogramas/ahoracado-matriz.png);
+    background-size: cover;
     margin: 0 auto;
+    filter: invert() drop-shadow(0 0 5px var(--lightblue));
 }
 
 #won-game {
@@ -35,27 +37,32 @@ html {
     align-items: center;
     justify-content: center;
     top: 8%;
-    left: 8%;
-    font-size: 6rem;
-    color: white;
-    text-shadow: 0 3px 5px;
+    left: 8%;    
     background-color: rgba(255, 255, 255, 0.3);
     border-radius: 5rem;
     backdrop-filter: blur(0.5rem) ;
-    box-shadow: 0 0 5rem white;
+    box-shadow: 0 0 5rem var(--lightblue);
     z-index: 10;
+}
+
+.won-game__you-won {
+    width: 85%;
+    margin: 0 auto;
+    font-size: 6rem;
+    color: white;
+    text-shadow: 0 3px 5px var(--lightblue);
 }
 
 .won-game__phrase {
     font-size: 3rem;
     color: var(--darkblue);
-    margin-top: 5rem;
+    margin-top: 3rem;
 }
 
 .won-game__word {
     font-size: 5rem;
     color: var(--darkblue);
-    margin-top: 1rem;
+    margin-bottom: 4rem;
 }
 
 .ingresarLetra {
@@ -102,15 +109,15 @@ html {
 }
 
 .color1 {
-    background-color: lightblue
+    background-color: khaki
 }
 
 .color2 {
-    background-color: lightseagreen
+    background-color: gold
 }
 
 .color3 {
-    background-color: brown;
+    background-color: crimson;
 }
 
 .presentation {
@@ -126,9 +133,9 @@ html {
 
 .presentation_title {
     margin: 15rem 0 4rem;
-    font-size: 3rem;
+    font-size: 5rem;
     color: white;
-    text-shadow: 0 3px 10px;
+    text-shadow: 0 3px 10px var(--lightblue);
 }
 
 /* AGREGAR NUEVA PALABRA */
@@ -141,7 +148,7 @@ html {
     width: 80%;
     max-width: 525px;
     height: 5.5rem;
-    margin: 4rem auto 1.5rem;
+    margin: 7rem auto 1.5rem;
     text-align: center;
     background-color: lightseagreen;
     font-family: 'Permanent Marker', cursive;
@@ -161,17 +168,17 @@ html {
 /* JUEGO NUEVO */
 
 .new-game_title {
-    margin: 7rem 0;
+    margin: 6rem auto 3rem;
     font-size: 4rem;
     color: white;
-    text-shadow: 0 3px 10px;
+    text-shadow: 0 3px 10px var(--lightblue);
 }
 
 .new-game__buttons {
     display: inline;
     position: relative;
     width: 62%;
-    margin: 3.5rem auto;
+    margin: 3.5rem auto 0;
     z-index: 5;
 }
 
