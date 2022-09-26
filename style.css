@@ -22,7 +22,7 @@ html {
 #ahorcado {
     width: 240px;
     height: 320px;
-    background-image: url(assets/fotogramas/ahoracado-matriz.png);
+    background-image: url(assets/ahoracado-matriz.png);
     background-size: cover;
     margin: 0 auto;
     filter: invert() drop-shadow(0 0 5px var(--lightblue));
@@ -37,10 +37,10 @@ html {
     align-items: center;
     justify-content: center;
     top: 8%;
-    left: 8%;    
+    left: 8%;
     background-color: rgba(255, 255, 255, 0.3);
     border-radius: 5rem;
-    backdrop-filter: blur(0.5rem) ;
+    backdrop-filter: blur(0.5rem);
     box-shadow: 0 0 5rem var(--lightblue);
     z-index: 10;
 }
@@ -67,12 +67,13 @@ html {
 
 .ingresarLetra {
     width: 100%;
-    height: 100vh;
+    height: fit-content;
     position: absolute;
     top: 0;
     left: 0;
     background: transparent;
     color: transparent;
+    border: none;
     cursor: default;
     z-index: 1;
 }
@@ -109,21 +110,24 @@ html {
 }
 
 .color1 {
-    background-color: khaki
+    background-color: khaki;
 }
 
 .color2 {
-    background-color: gold
+    background-color: gold;
 }
 
 .color3 {
     background-color: crimson;
 }
 
+.openGame_section1 {
+    margin-top: 15rem;
+}
 .presentation {
-    display: inline-block;
+    display: inline-table;
     width: 100%;
-    height: 100vh;
+    /* height: initial; */
     text-align: center;
     background-image: url(./assets/waves.png);
     background-position: center;
@@ -189,15 +193,69 @@ footer {
     background-color: rgba(255, 255, 255, 0.5);
     opacity: 1;
 
-    width: 100%;
+    width: 140px;
     height: 20px;
     text-align: right;
     padding: 4px 10px 0;
 
     position: fixed;
-    /* transform: rotate(-90deg); */
-    bottom: 0;
+    transform: rotate(-90deg);
+    bottom: 58px;
     /* 58 */
-    left: 0;
+    left: -60px;
     /* -59 */
+}
+
+/* MEDIA QUERIES */
+@media (max-width: 360px) {
+
+    .presentation_title {
+        margin: 4rem 0 2rem;
+        font-size: 4rem;
+    }
+
+    .btn_ {
+        width: 15rem;
+        height: 4rem;
+        margin: 2rem 0.5rem 0;
+        font-size: 1.5rem;
+    }
+
+    .new-word__input {
+        margin: 4rem auto 1.5rem;
+        text-align: center;
+        background-color: lightseagreen;
+        font-family: 'Permanent Marker', cursive;
+        font-size: 2.5rem;
+        color: white;
+        border: 1px solid;
+        border-radius: 2.5rem;
+    }
+
+    .new-word {
+        margin-bottom: -30px;
+    }
+
+    .new-game_title{
+        font-size: 3rem;
+        margin: 3rem 0 2rem;
+    }
+
+    .output {
+        font-size: 3rem;
+        margin: 0 auto;
+    }
+
+    .won-game__you-won {
+        font-size: 4rem;
+    }
+
+    .won-game__phrase {
+        font-size: 2rem;
+    }
+
+    .won-game__word {
+        font-size: 4rem;
+        margin-bottom: 2rem;
+    }
 }
