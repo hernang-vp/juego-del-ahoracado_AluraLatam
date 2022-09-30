@@ -66,9 +66,9 @@ html {
 
 .ingresarLetra {
     width: 100%;
-    height: 470px;
+    height: 130px;
     position: fixed;
-    top: 120px;
+    top: 465px;
     left: 0;
     background: transparent;
     color: transparent;
@@ -77,11 +77,19 @@ html {
     cursor: default;
 }
 
+.output-words {
+    width: 100%;
+    height: 100px;
+}
+
 .output {
-    width: 80%;
     font-size: 4rem;
     color: white;
-    margin: 2.5rem auto;
+}
+
+.letrasIncorrectas {
+    font-size: 2.5rem;
+    color: gold;
 }
 
 /* //////////////////// */
@@ -127,7 +135,6 @@ html {
 .presentation {
     display: inline-table;
     width: 100%;
-    /* height: initial; */
     text-align: center;
     background-image: url(./assets/waves.png);
     background-position: center;
@@ -200,13 +207,11 @@ footer {
     position: fixed;
     transform: rotate(-90deg);
     bottom: 58px;
-    /* 58 */
     left: -60px;
-    /* -59 */
 }
 
 /* MEDIA QUERIES */
-@media (max-width: 360px) {
+@media (max-width: 480px) {
 
     .presentation_title {
         margin: 4rem 0 2rem;
@@ -241,13 +246,13 @@ footer {
     }
 
     .output {
-        font-size: 3rem;
+        font-size: 2.5rem;
         margin: 0 auto;
     }
 
     .ingresarLetra {
-        height: 370px;
-        top: 100px;
+        height: 90px;
+        top: 390px;
     }
 
     .won-game__you-won {

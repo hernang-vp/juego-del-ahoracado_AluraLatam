@@ -8,9 +8,11 @@ const nuevaPalabra = document.getElementById("new-word").style.display = "none";
 const nuevoJuego = document.getElementById("new-game").style.display = "none";
 
 const arrayPalabras = ["gato", "perro", "elefante", "conejo", "lemur", "gorila", "ardilla", "pato", "gallina"];
+const wrongLetters = document.querySelector(".letrasIncorrectas")
 
 let palabra = null
 let palabraConGuiones = null
+let arrayLetrasIncorrectas = [];
 let contadorFallos = 0;
 
 const enfocar = document.querySelector(".ingresarLetra");
@@ -28,45 +30,59 @@ function palabraNueva() {
     dibujoAhorcado.style.backgroundPosition = 0;
     juegoGanado.style.display = "none"
     enfocar.focus();
+    arrayLetrasIncorrectas = [];
+    wrongLetters.innerHTML = "";
 }
 
 /* //////////////////////////////////////////////////////////// */
 escribirLetra.addEventListener("keyup", function (event) {
-    let newLetter = event.key.toLocaleUpperCase();
+    let newLetter = event.key.toUpperCase();
+
     if (newLetter.match(/^[a-zñ]$/i)) {
-        console.log(newLetter)
-    }
-
-    let letra = document.querySelector(".ingresarLetra").value;
-    let haFallado = true;
-    for (let i in palabra) {
-        if (letra == palabra[i]) {
-            palabraConGuiones = palabraConGuiones.replaceAt(i * 2, letra);
-            haFallado = false;
+        console.log("ltr: " + newLetter)
+        let letra = document.querySelector(".ingresarLetra").value;
+        let haFallado = true;
+        let repetida = false;
+        for (let i in palabra) {
+            if (letra == palabra[i]) {
+                palabraConGuiones = palabraConGuiones.replaceAt(i * 2, letra);
+                haFallado = false;
+            }
         }
-    }
 
-    if (haFallado) {
-        contadorFallos++;
-        dibujoAhorcado.style.backgroundPosition = -(240 * contadorFallos) + 'px 0';
-        if (contadorFallos == 7) {
-            juegoGanado.style.display = "flex"
-            document.querySelector(".won-game__you-won").innerHTML = "Perdiste<br>¡Fin del juego!";
-            document.querySelector(".won-game__word").innerHTML = palabra.toUpperCase();
-        
+        if (haFallado) {
+            for (let i in arrayLetrasIncorrectas) {
+                if (letra == arrayLetrasIncorrectas[i]) {
+                    console.log("ltr" + arrayLetrasIncorrectas);
+                    repetida = true;
+                }
+            }
+            arrayLetrasIncorrectas.push(letra);
+            wrongLetters.innerHTML = arrayLetrasIncorrectas.join(" ") /* letras incorrectas */
+
+            if (!repetida) {
+                contadorFallos++;
+                dibujoAhorcado.style.backgroundPosition = -(240 * contadorFallos) + 'px 0';
+                if (contadorFallos == 7) {
+                    juegoGanado.style.display = "flex"
+                    document.querySelector(".won-game__you-won").innerHTML = "Perdiste<br>¡Fin del juego!";
+                    document.querySelector(".won-game__word").innerHTML = palabra.toUpperCase();
+
+                }
+            }
         }
-    } else {        
-        if (palabraConGuiones.indexOf("_") < 0) {
-            juegoGanado.style.display = "flex"
-            document.querySelector(".won-game__you-won").innerHTML = "¡Felicidades! ¡Ganaste!";
-            document.querySelector(".won-game__word").innerHTML = palabra.toUpperCase();
+        else {
+            if (palabraConGuiones.indexOf("_") < 0) {
+                juegoGanado.style.display = "flex"
+                document.querySelector(".won-game__you-won").innerHTML = "¡Felicidades! ¡Ganaste!";
+                document.querySelector(".won-game__word").innerHTML = palabra.toUpperCase();
+            }
         }
+        document.querySelector(".output").innerHTML = palabraConGuiones;
+
+        enfocar.value = ""
+        enfocar.focus();
     }
-
-    document.querySelector(".output").innerHTML = palabraConGuiones;
-
-    enfocar.value = ""
-    enfocar.focus();
 });
 /* //////////////////////////////////////////////////////////// */
 
@@ -76,13 +92,14 @@ const input = document.querySelector(".new-word__input");
 const advertencia = document.querySelector(".warning");
 
 ///* PANTALLA INICIAL *///
-function entrar_nuevoJuego() {    
+function entrar_nuevoJuego() {
     document.getElementById("openGame").style.display = "none";
     document.getElementById("new-game").style.display = "flex";
     palabraNueva()
     enfocar.focus();
-    // palabraSecretaAleatoria()
-    // document.addEventListener("keydown", capturarLetra);
+
+
+
 }
 
 function agregar_nuevaPalabra() {
@@ -107,7 +124,7 @@ input.addEventListener("keydown", function (event) {
 /* EVENTO 'ESCAPE' PARA SALIR A LA PANTALLA PRINCIPAL */
 document.addEventListener('keyup', function (event) {
     if (event.code == 'Escape') {
-        salir_nuevoJuego();        
+        salir_nuevoJuego();
         document.getElementById("new-word").style.display = "none";
         advertencia.innerText = "";
         input.value = ""
@@ -126,8 +143,8 @@ function guardarEmpezar() {
         clearInputText();
         advertencia.innerText = "";
         palabraNueva()
-        // document.addEventListener("keydown", capturarLetra);
-        console.log(arrayPalabras); /* borrar console.log */
+
+        console.log(arrayPalabras);
     }
 }
 
@@ -143,5 +160,5 @@ function cancelar_nuevaPalabra() {
 function salir_nuevoJuego() {
     document.getElementById("new-game").style.display = "none";
     document.getElementById("openGame").style.display = "flex";
-    // noCapturarLetra() //deja de capturar el teclado
+
 }

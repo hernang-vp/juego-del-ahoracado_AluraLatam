@@ -18,11 +18,11 @@
     <!-- SECCIÓN PRESENTACIÓN -->
     <section id="openGame" class="screen color1">
         <div class="presentation">
-        <div class="openGame_section1">
-            <h1 class="presentation_title">Juego del Ahorcado</h1>
-            <button class="btn_" onclick="entrar_nuevoJuego()">Iniciar Juego</button>
-            <button class="btn_" onclick="agregar_nuevaPalabra()">Agregar palabra</button>
-        </div>
+            <div class="openGame_section1">
+                <h1 class="presentation_title">Juego del Ahorcado</h1>
+                <button class="btn_" onclick="entrar_nuevoJuego()">Iniciar Juego</button>
+                <button class="btn_" onclick="agregar_nuevaPalabra()">Agregar palabra</button>
+            </div>
         </div>
     </section>
 
@@ -43,10 +43,13 @@
     <section id="new-game" class="screen color3">
         <div class="presentation">
             <h1 class="new-game_title">NUEVO JUEGO</h1>
-            <input type="text" maxlength="1" class="ingresarLetra">
 
             <div id="ahorcado"></div> <!-- dibujo ahorcado -->
-            <p class="output" style="text-transform:uppercase;"></p> <!-- palabra con guiones y mostrada -->
+            <input type="text" maxlength="1" class="ingresarLetra">
+            <div class="output-words">
+                <p class="output" style="text-transform:uppercase;"></p> <!-- palabra con guiones y mostrada -->
+                <p class="letrasIncorrectas"></p>
+            </div>
 
             <div class="new-game__buttons">
                 <button class="btn_" onclick="palabraNueva()">Nuevo Juego</button>
