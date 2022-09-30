@@ -57,17 +57,16 @@ escribirLetra.addEventListener("keyup", function (event) {
                     repetida = true;
                 }
             }
-            arrayLetrasIncorrectas.push(letra);
-            wrongLetters.innerHTML = arrayLetrasIncorrectas.join(" ") /* letras incorrectas */
 
             if (!repetida) {
                 contadorFallos++;
                 dibujoAhorcado.style.backgroundPosition = -(240 * contadorFallos) + 'px 0';
+                arrayLetrasIncorrectas.push(letra);
+                wrongLetters.innerHTML = arrayLetrasIncorrectas.join(" ") /* letras incorrectas */
                 if (contadorFallos == 7) {
                     juegoGanado.style.display = "flex"
                     document.querySelector(".won-game__you-won").innerHTML = "Perdiste<br>¡Fin del juego!";
                     document.querySelector(".won-game__word").innerHTML = palabra.toUpperCase();
-
                 }
             }
         }
@@ -97,9 +96,6 @@ function entrar_nuevoJuego() {
     document.getElementById("new-game").style.display = "flex";
     palabraNueva()
     enfocar.focus();
-
-
-
 }
 
 function agregar_nuevaPalabra() {
@@ -160,5 +156,4 @@ function cancelar_nuevaPalabra() {
 function salir_nuevoJuego() {
     document.getElementById("new-game").style.display = "none";
     document.getElementById("openGame").style.display = "flex";
-
 }
